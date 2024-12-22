@@ -1,0 +1,7 @@
+Pandas
+numpy
+matlibplot
+MinMaxScaler
+KMeans
+PCA
+StandardScaler
