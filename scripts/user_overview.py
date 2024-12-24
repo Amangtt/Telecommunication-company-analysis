@@ -240,5 +240,6 @@ class overview:
         plt.xticks(range(1, len(explained_variance) + 1))
         plt.grid()
         plt.show()
+        
     
 
