@@ -41,8 +41,8 @@ class engagement:
         normalized= scaler.fit_transform(data_to_normalize)
         kmean= KMeans(n_clusters=3, random_state=42)
         met['Cluster'] = kmean.fit_predict(normalized)
-        cluster_counts = met['Cluster'].value_counts()
-        print(cluster_counts)
+        
+        
         return met
     
     # This Function evaluates each cluster
@@ -137,4 +137,12 @@ class engagement:
         plt.xticks(k_range)
         plt.grid()
         plt.show()
+    def avg(clusters):
+        cluster_summary = clusters.groupby('Cluster').agg(
+                
+                avg_session_frequency=('session_frequency', 'mean'),
+                avg_session_duration=('session_duration', 'mean'),
+                avg_total_traffic=('total_traffic', 'mean'),
+        )
+        return cluster_summary
     
